@@ -1,6 +1,11 @@
+run = "clear && poetry run python main.py"
 
 language = "python"
 modules = ["python-base-3.13"]
+
+[packager]
+language = "python"
+ignoredPackages = ["telegram"]
 
 [nix]
 channel = "stable-25_05"
@@ -8,22 +13,3 @@ packages = ["cacert", "glibcLocales"]
 
 [env]
 POETRY_VIRTUALENVS_IN_PROJECT = "true"
-
-[run]
-command = "poetry run python main.py"
-
-[workflows]
-runButton = "Run"
-
-[[workflows.workflow]]
-name = "Run"
-author = 3905110
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "poetry install"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "poetry run python main.py"
