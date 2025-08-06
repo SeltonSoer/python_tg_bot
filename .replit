@@ -1,5 +1,12 @@
+language = "python"
 modules = ["python-base-3.13"]
 
 [nix]
 channel = "stable-25_05"
 packages = ["cacert", "glibcLocales"]
+
+[env]
+POETRY_VIRTUALENVS_IN_PROJECT = "true"
+
+[run]
+command = "poetry run python main.py"
