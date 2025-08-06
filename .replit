@@ -1,3 +1,4 @@
+
 language = "python"
 modules = ["python-base-3.13"]
 
@@ -10,3 +11,19 @@ POETRY_VIRTUALENVS_IN_PROJECT = "true"
 
 [run]
 command = "poetry run python main.py"
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 3905110
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "poetry install"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "poetry run python main.py"
