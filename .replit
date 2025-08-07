@@ -1,15 +1,5 @@
-run = "clear && poetry run python main.py"
-
-language = "python"
-modules = ["python-base-3.13"]
-
-[packager]
-language = "python"
-ignoredPackages = ["telegram"]
+run = "./run.sh"
 
 [nix]
 channel = "stable-25_05"
-packages = ["cacert", "glibcLocales"]
-
-[env]
-POETRY_VIRTUALENVS_IN_PROJECT = "true"
+packages = ["python313", "cacert", "glibcLocales"]
