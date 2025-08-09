@@ -1,0 +1,13 @@
+services:
+  bot:
+    build: .
+    image: myorg/my-telegram-bot:latest
+    restart: unless-stopped
+    # Для разработки: можно примонтировать код, но в проде лучше убрать volume
+    # volumes:
+    #   - ./:/app:ro
+    env_file:
+      - .env       # файл с переменными окружения (не коммитить!)
+    environment:
+      - TG_KEY_BOT_TEST    # переменная будет подхвачена из .env или окружения
+    # нет портов — бот не слушает HTTP (он сам делает исходящие запросы к Telegram)
