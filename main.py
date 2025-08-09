@@ -18,6 +18,5 @@ if __name__ == '__main__':
     application.add_handler(start_handler)
 
     print('🚀🚀🚀 TG BOT HAS STARTED 🚀🚀🚀')
-    print('🚀🚀🚀 TG BOT HAS STARTED 🚀🚀🚀')
 
     application.run_polling()
