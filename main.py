@@ -7,9 +7,10 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 TG_TOKEN = os.getenv('TG_KEY_BOT_TEST')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    _docker.get_containers_docker()
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=f"{_docker.get_containers_docker()}"
+        text='Выполнено'
     )
 
 
