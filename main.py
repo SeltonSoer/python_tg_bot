@@ -9,7 +9,7 @@ TG_TOKEN = os.getenv('TG_KEY_BOT_TEST')
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=f"{_docker.docker()}"
+        text=f"{_docker.get_containers_docker()}"
     )
 
 

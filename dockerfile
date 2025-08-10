@@ -16,8 +16,7 @@ COPY requirements.txt .
 
 # 5) Обновляем pip и ставим зависимости (без cache чтобы уменьшить размер образа)
 RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apt-get update && apt-get install -y openssh-client && rm -rf /var/lib/apt/lists/*
+    && pip install --no-cache-dir -r requirements.txt
 
 # 6) Копируем весь код приложения в контейнер
 COPY . .
