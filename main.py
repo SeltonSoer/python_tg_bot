@@ -8,7 +8,7 @@ TG_TOKEN = os.getenv('TG_KEY_BOT_TEST')
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text="I'm a bot, please talk to me!"
+        text="REDEPLOY TESTED"
     )
 
 
@@ -17,7 +17,6 @@ if __name__ == '__main__':
     start_handler = CommandHandler('start', start)
     application.add_handler(start_handler)
 
-    print('🚀🚀🚀 TG BOT HAS STARTED 🚀🚀🚀')
     print('🚀🚀🚀 TG BOT HAS STARTED 🚀🚀🚀')
 
     application.run_polling()
