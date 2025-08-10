@@ -28,6 +28,7 @@ jobs:
           proxy_username: ${{ secrets.SERVER_USER }}
           proxy_key: ${{ secrets.SERVER_SSH_KEY }}
           proxy_passphrase: ${{ secrets.PROXY_PASSPHRASE }}
+          proxy_password: ${{ secrets.PROXY_PASSWORD }}
           source: my-telegram-bot.tar
           target: ~/my-telegram-bot.tar
 
@@ -41,6 +42,7 @@ jobs:
           proxy_username: ${{ secrets.SERVER_USER }}
           proxy_key: ${{ secrets.SERVER_SSH_KEY }}
           proxy_passphrase: ${{ secrets.PROXY_PASSPHRASE }}
+          proxy_password: ${{ secrets.PROXY_PASSWORD }}
           script: |
             docker load -i ~/my-telegram-bot.tar
             docker stop mybot || true
