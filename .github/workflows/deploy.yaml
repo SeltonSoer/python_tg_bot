@@ -49,5 +49,6 @@ jobs:
             docker rm mybot || true
             docker run -d --name mybot \
             -v /var/run/docker.sock:/var/run/docker.sock \
+            --user root \
             --env TG_KEY_BOT_TEST="${{ secrets.SERVER_BOT_TOKEN }}" my-telegram-bot:latest
             rm "$HOME/my-telegram-bot.tar/my-telegram-bot.tar"
