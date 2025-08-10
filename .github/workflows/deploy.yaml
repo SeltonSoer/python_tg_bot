@@ -44,8 +44,8 @@ jobs:
           proxy_key: ${{ secrets.SERVER_SSH_KEY }}
           proxy_passphrase: ${{ secrets.PROXY_PASSPHRASE }}
           script: |
-            docker load -i ~/my-telegram-bot.tar
+            docker load -i "$HOME/my-telegram-bot.tar"
             docker stop mybot || true
             docker rm mybot || true
             docker run -d --name mybot --env TG_KEY_BOT_TEST="${{ secrets.SERVER_BOT_TOKEN }}" my-telegram-bot:latest
-            rm ~/my-telegram-bot.tar
+            rm "$HOME/my-telegram-bot.tar"
