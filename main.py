@@ -1,4 +1,5 @@
 import os
+from docker_usage_scripts import cmd_docker as _docker
 
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
@@ -8,7 +9,7 @@ TG_TOKEN = os.getenv('TG_KEY_BOT_TEST')
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text="REDEPLOY TESTED"
+        text=f"{_docker.docker()}"
     )
 
 
