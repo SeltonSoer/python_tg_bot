@@ -5,5 +5,5 @@ def get_containers_docker():
     containers = client.containers.list(all=True)
     str_result = ''
     for c in containers:
-        str_result += f'Имя контейнера: {c.name}; Статус контейнера: {c.status}\n'
+        str_result += f'Имя контейнера: {c.name};         Статус контейнера: 🟢 {c.status}\n'
     return str_result
